@@ -1,0 +1,11 @@
+.Burger {
+  overflow: auto;
+  margin: auto;
+  width: 100%;
+  max-width: 400px;
+  height: 15.625em;
+  max-height: 400px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
