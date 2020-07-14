@@ -7,15 +7,10 @@ const ingredientsReducer = (state, action) => {
     case "ADD_INGREDIENT":
       return state.concat(action.payload);
     case "REMOVE_INGREDIENT":
-      // TODO: Implementar un id en vez de un índice.
-      console.log(state);
       state.splice(action.payload, 1);
-      console.log(state);
       return [...state];
     case "UPDATE_INGREDIENT":
-      console.log(state);
       state.splice(action.payload.index, 1, action.payload.ingredient);
-      console.log(state);
       return [...state];
     default:
       return state;
@@ -47,18 +42,12 @@ const BurgerBuilder = () => {
     <>
       <Burger ingredients={ingredients} />
       {helperArray.map((_, index) => (
-        (index !== helperArray.length - 1) ?
-          <IngredientSelector
-            key={`${ingredients[index]}${index}`}
-            value={ingredients[index]}
-            onSelectIngredient={handleSelectIngredient.bind(null, index)}
-            onRemoveIngredient={handleRemoveIngredient.bind(null, index)}
-          />
-          :
-          <IngredientSelector
-            key={`${ingredients[index]}${index}`}
-            onSelectIngredient={handleSelectIngredient.bind(null, index)}
-          />
+        <IngredientSelector
+          key={`${ingredients[index]}${index}`}
+          value={ingredients[index]}
+          onSelectIngredient={handleSelectIngredient.bind(null, index)}
+          onRemoveIngredient={handleRemoveIngredient.bind(null, index)}
+        />
       ))}
     </>
   );
