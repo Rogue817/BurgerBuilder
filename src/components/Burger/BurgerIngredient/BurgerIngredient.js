@@ -1,5 +1,5 @@
 import React from "react";
-import "./BurgerIngredient.css";
+import "./../../../styles/BurgerIngredient.css";
 import PropTypes from "prop-types";
 
 const BurgerIngredient = ({ type }) => {
@@ -16,11 +16,11 @@ const BurgerIngredient = ({ type }) => {
     case "BREAD_BOTTOM":
       ingredient = <div className="BreadBottom"></div>;
       break;
-    case "CHEESE":
-      ingredient = <div className="Cheese"></div>;
-      break;
     case "BACON":
       ingredient = <div className="Bacon"></div>;
+      break;
+    case "CHEESE":
+      ingredient = <div className="Cheese"></div>;
       break;
     case "MEAT":
       ingredient = <div className="Meat"></div>;
